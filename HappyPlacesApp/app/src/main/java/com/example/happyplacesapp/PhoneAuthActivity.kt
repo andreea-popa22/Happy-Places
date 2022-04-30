@@ -16,7 +16,7 @@ import com.google.firebase.ktx.Firebase
 import java.util.concurrent.TimeUnit
 
 class PhoneAuthActivity : Activity() {
-    
+
     private lateinit var auth: FirebaseAuth
 
     private var storedVerificationId: String? = ""
