@@ -6,8 +6,10 @@
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/drawable/gradient_background.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/layout-v23/activity_sign_up.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
+        <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
       </map>
     </option>
   </component>

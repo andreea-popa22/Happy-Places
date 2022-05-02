@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Happy Places App</string>
+    <string name="sign_in_title">Sign in to your account</string>
+    <string name="type_email_hint">Type your Email</string>
+    <string name="type_password_hint">Type Your Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="have_account">Already registered?</string>
+    <string name="to_sign_up">Sign Up →</string>
+    <string name="to_sign_in">Sign In →</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="retype_password_hint">Retype Your Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="type_password">Type Your Password</string>
 </resources>
