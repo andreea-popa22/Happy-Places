@@ -44,4 +44,9 @@
         <item name="android:textSize">14sp</item>
         <item name="android:singleLine">true</item>
     </style>
+
+    <!-- Splash Screen theme. -->
+    <style name="Theme.SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_image</item>
+    </style>
 </resources>
