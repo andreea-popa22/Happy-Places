@@ -49,4 +49,11 @@
     <style name="Theme.SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_image</item>
     </style>
+
+    <!--    White Theme-->
+    <style name="WhiteTheme" parent="android:Theme.Light">
+        <item name="android:background">@color/white_opaque</item>
+        <item name="android:windowBackground">@color/white_opaque</item>
+        <item name="android:colorBackground">@color/white_opaque</item>
+    </style>
 </resources>

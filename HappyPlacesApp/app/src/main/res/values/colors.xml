@@ -14,4 +14,6 @@
     <color name="logo_pink">#9B3357</color>
     <color name="logo_green">#4D807A</color>
     <color name="dark_green">#1d3633</color>
+    <color name="white_opaque">#FFFFFFFF</color>
+    <color name="pitch_black">#FF000000</color>
 </resources>
