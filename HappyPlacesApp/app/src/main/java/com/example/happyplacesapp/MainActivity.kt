@@ -4,6 +4,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.multidex.MultiDexApplication
@@ -17,6 +18,7 @@ import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
+
 
 class MainActivity : AppCompatActivity(){
     private val TAG = "MainActivity"
