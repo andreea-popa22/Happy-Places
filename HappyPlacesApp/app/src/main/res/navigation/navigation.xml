@@ -8,16 +8,16 @@
     <fragment
         android:id="@+id/titleFragment"
         android:name="com.example.happyplacesapp.TitleFragment"
-        android:label="fragment_title"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_title" />
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.happyplacesapp.AboutFragment"
-        android:label="fragment_about"
+        android:label="@string/about"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/contactFragment"
         android:name="com.example.happyplacesapp.ContactFragment"
-        android:label="fragment_contact"
+        android:label="@string/contact"
         tools:layout="@layout/fragment_contact" />
 </navigation>
