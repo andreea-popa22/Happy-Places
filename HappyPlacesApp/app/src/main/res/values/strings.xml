@@ -13,7 +13,14 @@
     <string name="sign_up">Sign Up</string>
     <string name="type_password">Type Your Password</string>
     <string name="about_text">Welcome to Happy Places!
-        <br/><br/> This is the best app for discovering wonderful destinations for your next restless city break or five-star tropical vacation.
-        <br/><br/> Have you visited such a place already? Share your experience with us at discover@happyplaces.com
-        <br/><br/> Stay with us for more thrilling experiences!</string>
+        <br /><br /> This is the best app for discovering wonderful destinations for your next restless city break or five-star tropical vacation.
+        <br /><br /> Have you visited such a place already? Share your experience with us at discover@happyplaces.com
+        <br /><br /> Stay with us for more thrilling experiences!
+    </string>
+    <string name="contact_text">Contact us!
+        <br /><br /> Do you have questions? → customer_service@happyplaces.com
+        <br /><br /> Do you have happy places recommendation? → recommendation@happyplaces.com
+        <br /><br /> Do you have problems? → complaints@happyplaces.com
+        <br /><br /> Follow us on Instagram! → @happy_places_official
+    </string>
 </resources>
