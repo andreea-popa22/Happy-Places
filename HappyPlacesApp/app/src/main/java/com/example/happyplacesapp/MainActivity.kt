@@ -4,7 +4,12 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.databinding.DataBindingUtil
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.multidex.MultiDexApplication
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
+import com.example.happyplacesapp.databinding.ActivityMainBinding
 import com.google.firebase.auth.ActionCodeSettings
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.ktx.auth
@@ -15,11 +20,25 @@ import com.facebook.appevents.AppEventsLogger;
 
 class MainActivity : AppCompatActivity(){
     private val TAG = "MainActivity"
+    private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_HappyPlacesApp)
-        setContentView(R.layout.activity_main)
+        //setContentView(R.layout.activity_main)
+        @Suppress("UNUSED_VARIABLE")
+        val binding =
+            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        drawerLayout = binding.drawerLayout
+
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+        NavigationUI.setupWithNavController(binding.navView, navController)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        return NavigationUI.navigateUp(navController, drawerLayout)
     }
 
     private fun getUserProfile() {

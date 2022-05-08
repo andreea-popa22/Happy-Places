@@ -12,15 +12,19 @@
     <string name="retype_password_hint">Retype Your Password</string>
     <string name="sign_up">Sign Up</string>
     <string name="type_password">Type Your Password</string>
+    <string name="about">About</string>
+    <string name="contact">Contact</string>
     <string name="about_text">Welcome to Happy Places!
-        <br /><br /> This is the best app for discovering wonderful destinations for your next restless city break or five-star tropical vacation.
-        <br /><br /> Have you visited such a place already? Share your experience with us at discover@happyplaces.com
-        <br /><br /> Stay with us for more thrilling experiences!
+        <br /><br /> \n \n This is the best app for discovering wonderful destinations for your next restless city break or five-star tropical vacation.
+        <br /><br /> \n \n Have you visited such a place already? Share your experience with us at discover@happyplaces.com
+        <br /><br /> \n \n Stay with us for more thrilling experiences!
     </string>
     <string name="contact_text">Contact us!
-        <br /><br /> Do you have questions? → customer_service@happyplaces.com
-        <br /><br /> Do you have happy places recommendation? → recommendation@happyplaces.com
-        <br /><br /> Do you have problems? → complaints@happyplaces.com
-        <br /><br /> Follow us on Instagram! → @happy_places_official
+        <br /><br /> \n \n Do you have questions? → customer_service@happyplaces.com
+        <br /><br /> \n \n Do you have happy places recommendation? → recommendation@happyplaces.com
+        <br /><br /> \n \n Do you have problems? → complaints@happyplaces.com
+        <br /><br /> \n \n Follow us on Instagram! → @happy_places_official
     </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
