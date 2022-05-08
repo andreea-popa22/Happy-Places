@@ -20,4 +20,9 @@
         android:name="com.example.happyplacesapp.ContactFragment"
         android:label="@string/contact"
         tools:layout="@layout/fragment_contact" />
+<!--    <fragment-->
+<!--        android:id="@+id/settingsFragment"-->
+<!--        android:name="com.example.happyplacesapp.SettingsFragment"-->
+<!--        android:label="@string/settings"-->
+<!--        tools:layout="@layout/fragment_settings" />-->
 </navigation>
