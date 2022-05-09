@@ -1,10 +1,13 @@
 package com.example.happyplacesapp
 
+import android.app.Activity
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
@@ -66,12 +69,11 @@ class MainActivity : AppCompatActivity(){
 
     private fun checkCurrentUser() {
         val user = Firebase.auth.currentUser
+        val userTextView = findViewById<TextView>(R.id.hello_username)
         if (user != null) {
-            val userTextView = findViewById<TextView>(R.id.hello_username)
             val text: String = "Hello, " + user.email + "!"
             userTextView.text = text
         } else {
-            val userTextView = findViewById<TextView>(R.id.hello_username)
             val text: String = "Hello, world!"
             userTextView.text = text
         }

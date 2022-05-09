@@ -11,6 +11,7 @@
     <string name="create_new_account">Create new account</string>
     <string name="retype_password_hint">Retype Your Password</string>
     <string name="sign_up">Sign Up</string>
+    <string name="log_out">Log Out</string>
     <string name="type_password">Type Your Password</string>
     <string name="about">About</string>
     <string name="contact">Contact</string>

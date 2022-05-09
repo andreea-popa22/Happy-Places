@@ -8,6 +8,8 @@ import android.widget.Button
 import android.widget.Toast
 import com.example.happyplacesapp.MainActivity
 import com.example.happyplacesapp.R
+import com.example.happyplacesapp.databinding.ActivitySignInBinding
+import com.example.happyplacesapp.databinding.ActivitySignUpBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -15,14 +17,12 @@ import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class SignUpActivity : AppCompatActivity() {
-    private lateinit var binding: SignUpActivity
+    private lateinit var binding: ActivitySignUpBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_sign_up)
-//        binding = SignUpActivity().inflate(layoutInflater)
-//        val view = binding.root
-//        setContentView(view)
 
         val btn_to_sign_in = findViewById<Button>(R.id.tv_to_sign_in)
         btn_to_sign_in.setOnClickListener {
