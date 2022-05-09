@@ -1,11 +1,13 @@
-package com.example.happyplacesapp
+package com.example.happyplacesapp.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
 import android.text.TextUtils
+import android.widget.Button
 import android.widget.Toast
+import com.example.happyplacesapp.MainActivity
+import com.example.happyplacesapp.R
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -22,7 +24,11 @@ class SignUpActivity : AppCompatActivity() {
 //        val view = binding.root
 //        setContentView(view)
 
-
+        val btn_to_sign_in = findViewById<Button>(R.id.tv_to_sign_in)
+        btn_to_sign_in.setOnClickListener {
+            val intent : Intent = Intent(this@SignUpActivity, SignInActivity::class.java)
+            startActivity(intent)
+        }
         btn_register.setOnClickListener {
             when {
                 TextUtils.isEmpty(et_register_email.text.toString().trim { it <= ' ' }) -> {

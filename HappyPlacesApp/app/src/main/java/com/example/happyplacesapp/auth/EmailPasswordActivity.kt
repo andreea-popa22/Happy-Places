@@ -1,7 +1,6 @@
-package com.example.happyplacesapp
+package com.example.happyplacesapp.auth
 
 import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -10,15 +9,20 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class SignInActivity : AppCompatActivity(){
+class EmailPasswordActivity : Activity() {
 
+    // [START declare_auth]
     private lateinit var auth: FirebaseAuth
     // [END declare_auth]
 
+
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // [START initialize_auth]
+        // Initialize Firebase Auth
         auth = Firebase.auth
-        setContentView(R.layout.activity_sign_in)
+        // [END initialize_auth]
     }
 
     // [START on_start_check_user]

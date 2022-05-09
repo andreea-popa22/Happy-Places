@@ -1,4 +1,4 @@
-package com.example.happyplacesapp
+package com.example.happyplacesapp.auth
 
 import android.app.Activity
 import android.content.Intent

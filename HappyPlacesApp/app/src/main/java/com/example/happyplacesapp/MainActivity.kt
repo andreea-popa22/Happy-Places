@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.multidex.MultiDexApplication
@@ -36,6 +37,8 @@ class MainActivity : AppCompatActivity(){
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
+
+        checkCurrentUser()
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -62,12 +65,15 @@ class MainActivity : AppCompatActivity(){
     }
 
     private fun checkCurrentUser() {
-        // [START check_current_user]
         val user = Firebase.auth.currentUser
         if (user != null) {
-            // User is signed in
+            val userTextView = findViewById<TextView>(R.id.hello_username)
+            val text: String = "Hello, " + user.email + "!"
+            userTextView.text = text
         } else {
-            // No user is signed in
+            val userTextView = findViewById<TextView>(R.id.hello_username)
+            val text: String = "Hello, world!"
+            userTextView.text = text
         }
     }
 

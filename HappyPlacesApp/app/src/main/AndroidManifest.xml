@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HappyPlacesApp" >
         <activity
-            android:name=".SignUpActivity"
+            android:name=".auth.SignUpActivity"
             android:exported="true"/>
         <activity
-            android:name=".SignInActivity"
+            android:name=".auth.SignInActivity"
             android:exported="true"/>
         <activity
             android:name=".MainActivity"

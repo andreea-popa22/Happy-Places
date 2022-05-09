@@ -1,6 +1,5 @@
 package com.example.happyplacesapp
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -8,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.example.happyplacesapp.auth.SignInActivity
 import com.example.happyplacesapp.databinding.FragmentTitleBinding
 
 private const val ARG_PARAM1 = "param1"

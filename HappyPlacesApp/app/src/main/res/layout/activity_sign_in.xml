@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInActivity"
+    tools:context=".auth.SignInActivity"
     android:background="@color/white">
 
     <FrameLayout
@@ -127,13 +127,14 @@
             android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
-        <TextView
+        <Button
             android:id="@+id/tv_to_sign_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
+            android:background="?android:attr/selectableItemBackground"
             android:text="@string/to_sign_up"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="17dp"
             android:foreground="?attr/selectableItemBackground"
             android:padding="5dp"/>
     </LinearLayout>

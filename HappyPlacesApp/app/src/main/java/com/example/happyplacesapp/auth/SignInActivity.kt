@@ -1,40 +1,51 @@
-package com.example.happyplacesapp
+package com.example.happyplacesapp.auth
 
-import android.app.Activity
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.Toast
+import com.example.happyplacesapp.MainActivity
+import com.example.happyplacesapp.R
+import com.example.happyplacesapp.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class EmailPasswordActivity : Activity() {
-
-    // [START declare_auth]
+class SignInActivity : AppCompatActivity(){
+    private lateinit var binding: ActivitySignInBinding
     private lateinit var auth: FirebaseAuth
-    // [END declare_auth]
-
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // [START initialize_auth]
-        // Initialize Firebase Auth
         auth = Firebase.auth
-        // [END initialize_auth]
-    }
+        binding = ActivitySignInBinding.inflate(layoutInflater)
+        setContentView(R.layout.activity_sign_in)
 
-    // [START on_start_check_user]
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-        if(currentUser != null){
-            reload();
+        val btn_to_sign_up = findViewById<Button>(R.id.tv_to_sign_up)
+        btn_to_sign_up.setOnClickListener {
+            val intent : Intent = Intent(this@SignInActivity, SignUpActivity::class.java)
+            startActivity(intent)
+        }
+
+        val btn_sign_in = findViewById<Button>(R.id.btn_login)
+        btn_sign_in.setOnClickListener {
+            val email = binding.etLoginEmail.text.toString()
+            val pass = binding.etLoginPassword.text.toString()
+            signIn(email, pass)
         }
     }
-    // [END on_start_check_user]
+
+    public override fun onStart() {
+        super.onStart()
+
+        if(auth.currentUser != null){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+    }
 
     private fun createAccount(email: String, password: String) {
         // [START create_user_with_email]

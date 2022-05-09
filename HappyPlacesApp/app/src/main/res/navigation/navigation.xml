@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_contact" />
     <activity
         android:id="@+id/redirect_sign_in"
-        android:name="com.example.happyplacesapp.SignInActivity"
+        android:name="com.example.happyplacesapp.auth.SignInActivity"
         android:icon="@drawable/log_in_icon"
         android:label="@string/sign_in" />
 <!--    <fragment-->
