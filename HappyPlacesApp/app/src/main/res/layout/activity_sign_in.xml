@@ -10,7 +10,7 @@
     <FrameLayout
         android:id="@+id/header_logo"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_height="120dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,8 +18,8 @@
 
         <ImageView
             android:id="@+id/background_logo"
-            android:layout_width="671dp"
-            android:layout_height="173dp"
+            android:layout_width="500dp"
+            android:layout_height="170dp"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/gradient" />
 

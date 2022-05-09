@@ -42,10 +42,9 @@ class SignInActivity : AppCompatActivity(){
     public override fun onStart() {
         super.onStart()
 
-//        if(Firebase.auth.currentUser != null){
-//            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent)
-//        }
+        if(Firebase.auth.currentUser != null){
+            goToMainActivity()
+        }
     }
 
     private fun createAccount(email: String, password: String) {
@@ -73,12 +72,11 @@ class SignInActivity : AppCompatActivity(){
                     val user = Firebase.auth.currentUser
                     Toast.makeText(baseContext, "Success!!.",
                         Toast.LENGTH_SHORT).show()
-                    goToMainActivity()
-                    updateUI(user)
+                    //goToMainActivity()
+                    //updateUI(user)
                 } else {
                     Toast.makeText(baseContext, "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
-                    //goToMainActivity()
                     //updateUI(null)
                 }
             }
@@ -103,9 +101,6 @@ class SignInActivity : AppCompatActivity(){
 
     }
 
-    private fun reload() {
-
-    }
 
     companion object {
         private const val TAG = "EmailPassword"
