@@ -20,16 +20,17 @@
         android:name="com.example.happyplacesapp.ContactFragment"
         android:label="@string/contact"
         tools:layout="@layout/fragment_contact" />
-    <activity
-        android:id="@+id/redirect_sign_in"
-        android:name="com.example.happyplacesapp.auth.SignInActivity"
-        android:icon="@drawable/log_in_icon"
-        android:label="@string/sign_in" />
-    <activity
-        android:id="@+id/log_out_button"
-        android:name="com.example.happyplacesapp.MainActivity"
-        android:icon="@drawable/log_out_icon"
-        android:label="@string/log_out" />
+<!--    <activity-->
+<!--        android:id="@+id/redirect_sign_in"-->
+<!--        android:name="com.example.happyplacesapp.auth.SignInActivity"-->
+<!--        android:icon="@drawable/log_in_icon"-->
+<!--        android:label="@string/sign_in" />-->
+<!--    <activity-->
+<!--        android:id="@+id/log_out_button"-->
+<!--        android:name="com.example.happyplacesapp.MainActivity"-->
+<!--        android:icon="@drawable/log_out_icon"-->
+<!--        android:label="@string/log_out" />-->
+
 <!--    <fragment-->
 <!--        android:id="@+id/settingsFragment"-->
 <!--        android:name="com.example.happyplacesapp.SettingsFragment"-->

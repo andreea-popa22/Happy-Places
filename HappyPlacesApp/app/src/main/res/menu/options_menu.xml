@@ -13,16 +13,6 @@
         android:title="@string/contact"
         app:showAsAction="never"/>
 
-    <item
-        android:id="@+id/redirect_sign_in"
-        android:icon="@drawable/log_in_icon"
-        android:title="@string/sign_in"
-        app:showAsAction="never"/>
-
-    <item
-        android:id="@+id/log_out_button"
-        android:icon="@drawable/log_out_icon"
-        android:title="@string/log_out" />
 
 <!--    <item-->
 <!--        android:id="@+id/settingsFragment"-->

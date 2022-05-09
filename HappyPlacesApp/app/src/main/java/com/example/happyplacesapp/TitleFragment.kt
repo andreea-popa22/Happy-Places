@@ -30,7 +30,7 @@ class TitleFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.options_menu, menu)
+        inflater.inflate(R.menu.profile_menu, menu)
         checkCurrentUser(menu)
     }
 
@@ -57,11 +57,11 @@ class TitleFragment : Fragment() {
     public fun checkCurrentUser(menu: Menu) {
         val user = Firebase.auth.currentUser
         if (user != null) {
-            menu.getItem(2).setVisible(false)
-            menu.getItem(3).setVisible(true)
+            menu.getItem(0).setVisible(false)
+            menu.getItem(1).setVisible(true)
         } else {
-            menu.getItem(2).setVisible(true)
-            menu.getItem(3).setVisible(false)
+            menu.getItem(0).setVisible(true)
+            menu.getItem(1).setVisible(false)
         }
     }
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import com.example.happyplacesapp.MainActivity
 import com.example.happyplacesapp.R
@@ -16,11 +17,9 @@ import com.google.firebase.ktx.Firebase
 
 class SignInActivity : AppCompatActivity(){
     private lateinit var binding: ActivitySignInBinding
-    private lateinit var auth: FirebaseAuth
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        auth = Firebase.auth
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_sign_in)
 
@@ -32,64 +31,67 @@ class SignInActivity : AppCompatActivity(){
 
         val btn_sign_in = findViewById<Button>(R.id.btn_login)
         btn_sign_in.setOnClickListener {
-            val email = binding.etLoginEmail.text.toString()
-            val pass = binding.etLoginPassword.text.toString()
-            signIn(email, pass)
+            val et_login_email = findViewById<TextView>(R.id.et_login_email)
+            val et_login_password = findViewById<TextView>(R.id.et_login_password)
+            val email = et_login_email.text.toString()
+            val password = et_login_password.text.toString()
+            signIn(email, password)
         }
     }
 
     public override fun onStart() {
         super.onStart()
 
-        if(auth.currentUser != null){
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
+//        if(Firebase.auth.currentUser != null){
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+//        }
     }
 
     private fun createAccount(email: String, password: String) {
-        // [START create_user_with_email]
-        auth.createUserWithEmailAndPassword(email, password)
+        Firebase.auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
+                    val user = Firebase.auth.currentUser
                     Log.d(TAG, "createUserWithEmail:success")
-                    val user = auth.currentUser
+                    Toast.makeText(baseContext, "Authentication succeeded.",
+                        Toast.LENGTH_SHORT).show()
                     updateUI(user)
                 } else {
-                    // If sign in fails, display a message to the user.
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)
                     Toast.makeText(baseContext, "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
                     updateUI(null)
                 }
             }
-        // [END create_user_with_email]
     }
 
     private fun signIn(email: String, password: String) {
-        // [START sign_in_with_email]
-        auth.signInWithEmailAndPassword(email, password)
+        Firebase.auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithEmail:success")
-                    val user = auth.currentUser
+                    val user = Firebase.auth.currentUser
+                    Toast.makeText(baseContext, "Success!!.",
+                        Toast.LENGTH_SHORT).show()
+                    goToMainActivity()
                     updateUI(user)
                 } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "signInWithEmail:failure", task.exception)
                     Toast.makeText(baseContext, "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
-                    updateUI(null)
+                    //goToMainActivity()
+                    //updateUI(null)
                 }
             }
-        // [END sign_in_with_email]
+    }
+
+    private fun goToMainActivity() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     private fun sendEmailVerification() {
         // [START send_email_verification]
-        val user = auth.currentUser!!
+        val user = Firebase.auth.currentUser!!
         user.sendEmailVerification()
             .addOnCompleteListener(this) { task ->
                 // Email Verification sent
