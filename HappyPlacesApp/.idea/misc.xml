@@ -9,6 +9,7 @@
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/drawable/combined_logo.xml" value="0.264" />
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/drawable/gradient_background.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/drawable/rounded_fg.xml" value="0.2703125" />
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/drawable/splash_background_logo.xml" value="0.14791666666666667" />
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/drawable/splash_image.xml" value="0.14791666666666667" />
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/drawable/splash_logo.xml" value="0.264" />
@@ -16,7 +17,7 @@
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
-        <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/layout/activity_sign_up.xml" value="0.4" />
+        <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/layout/fragment_about.xml" value="0.1" />
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/layout/fragment_contact.xml" value="0.2" />
         <entry key="..\:/Users/Andreea/Desktop/Google-Android-Kotlin/PROIECT/HappyPlacesApp/app/src/main/res/layout/fragment_home.xml" value="0.1265625" />

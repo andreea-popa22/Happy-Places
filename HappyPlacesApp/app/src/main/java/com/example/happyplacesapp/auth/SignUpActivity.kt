@@ -33,6 +33,7 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(intent)
         }
         val et_register_name = findViewById<TextView>(R.id.et_register_name)
+        val et_register_phone = findViewById<TextView>(R.id.et_register_phone)
         btn_register.setOnClickListener {
             when {
                 TextUtils.isEmpty(et_register_email.text.toString().trim { it <= ' ' }) -> {
@@ -59,6 +60,7 @@ class SignUpActivity : AppCompatActivity() {
                 else -> {
                     val email: String = et_register_email.text.toString().trim { it <= ' ' }
                     val name: String = et_register_name.text.toString().trim { it <= ' ' }
+                    val phone: String = et_register_phone.text.toString().trim { it <= ' ' }
                     val password: String = et_register_password.text.toString().trim { it <= ' ' }
                     val confirmPassword: String =
                         et_confirm_password.text.toString().trim { it <= ' ' }
@@ -94,7 +96,9 @@ class SignUpActivity : AppCompatActivity() {
                                         intent.flags =
                                             Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                         intent.putExtra("user_id", firebaseUser.uid)
-                                        intent.putExtra("email_id", email)
+                                        intent.putExtra("user_email", email)
+                                        intent.putExtra("user_name", name)
+                                        intent.putExtra("user_phone", phone)
                                         startActivity(intent)
                                         finish()
                                     } else {
