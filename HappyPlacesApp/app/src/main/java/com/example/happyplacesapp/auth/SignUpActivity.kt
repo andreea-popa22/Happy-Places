@@ -29,7 +29,7 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val strUrl = "https://happy-places-57ca4-default-rtdb.europe-west1.firebasedatabase.app/"
+        val strUrl = "https://happy-places-57ca4-default-rtdb.europe-west1.firebasedatabase.app/data/"
         database = FirebaseDatabase.getInstance(strUrl).getReference("users")
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
