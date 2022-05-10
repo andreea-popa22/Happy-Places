@@ -13,9 +13,8 @@
         android:title="@string/contact"
         app:showAsAction="never"/>
 
-
-<!--    <item-->
-<!--        android:id="@+id/settingsFragment"-->
-<!--        android:icon="@drawable/settings_icon"-->
-<!--        android:title="@string/settings" />-->
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/settings_icon"
+        android:title="@string/settings" />
 </menu>

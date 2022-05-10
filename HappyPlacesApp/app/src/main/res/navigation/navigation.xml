@@ -31,9 +31,9 @@
 <!--        android:icon="@drawable/log_out_icon"-->
 <!--        android:label="@string/log_out" />-->
 
-<!--    <fragment-->
-<!--        android:id="@+id/settingsFragment"-->
-<!--        android:name="com.example.happyplacesapp.SettingsFragment"-->
-<!--        android:label="@string/settings"-->
-<!--        tools:layout="@layout/fragment_settings" />-->
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.happyplacesapp.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
