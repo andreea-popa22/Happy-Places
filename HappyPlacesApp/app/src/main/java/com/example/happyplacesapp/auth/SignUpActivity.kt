@@ -17,12 +17,20 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val strUrl = "https://happy-places-57ca4-default-rtdb.europe-west1.firebasedatabase.app/"
+        database = FirebaseDatabase.getInstance(strUrl).getReference("users")
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_sign_up)
@@ -72,18 +80,20 @@ class SignUpActivity : AppCompatActivity() {
                                     if (task.isSuccessful) {
                                         val firebaseUser: FirebaseUser = task.result!!.user!!
 
-                                        val profileUpdates =
-                                            UserProfileChangeRequest.Builder()
-                                                .setDisplayName(name)
-                                                //.setPhotoUri(Uri.parse("https://firebasestorage.googleapis.com/v0/b/fakelogisticscompany.appspot.com/o/default.png?alt=media&token=60224ebe-9bcb-45fd-8679-64b1408ec760"))
-                                                .build()
+//                                        val profileUpdates =
+//                                            UserProfileChangeRequest.Builder()
+//                                                .setDisplayName(name)
+//                                                //.setPhotoUri(Uri.parse("https://firebasestorage.googleapis.com/v0/b/fakelogisticscompany.appspot.com/o/default.png?alt=media&token=60224ebe-9bcb-45fd-8679-64b1408ec760"))
+//                                                .build()
+//
+//                                        firebaseUser!!.updateProfile(profileUpdates)
+//                                            .addOnCompleteListener { task ->
+//                                                if (task.isSuccessful) {
+//                                                    Log.d(TAG, "User profile updated.")
+//                                                }
+//                                            }
 
-                                        firebaseUser!!.updateProfile(profileUpdates)
-                                            .addOnCompleteListener { task ->
-                                                if (task.isSuccessful) {
-                                                    Log.d(TAG, "User profile updated.")
-                                                }
-                                            }
+                                        addDataToFirebase(email, name, phone, firebaseUser.uid)
 
                                         Toast.makeText(
                                             this@SignUpActivity,
@@ -120,5 +130,11 @@ class SignUpActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun addDataToFirebase(email: String, name: String, phone: String, uid: String){
+        database.child(uid).child("email").setValue(email)
+        database.child(uid).child("name").setValue(name)
+        database.child(uid).child("phone").setValue(phone)
     }
 }

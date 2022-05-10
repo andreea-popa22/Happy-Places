@@ -13,6 +13,8 @@ import com.example.happyplacesapp.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class SignInActivity : AppCompatActivity(){
@@ -72,7 +74,7 @@ class SignInActivity : AppCompatActivity(){
                     val user = Firebase.auth.currentUser
                     Toast.makeText(baseContext, "Success!!.",
                         Toast.LENGTH_SHORT).show()
-                    //goToMainActivity()
+                    goToMainActivity()
                     //updateUI(user)
                 } else {
                     Toast.makeText(baseContext, "Authentication failed.",
