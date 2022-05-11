@@ -9,7 +9,8 @@
         android:id="@+id/titleFragment"
         android:name="com.example.happyplacesapp.TitleFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_title" />
+        tools:layout="@layout/fragment_title">
+    </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.happyplacesapp.AboutFragment"
@@ -36,4 +37,14 @@
         android:name="com.example.happyplacesapp.SettingsFragment"
         android:label="@string/settings"
         tools:layout="@layout/fragment_settings" />
+    <activity
+        android:id="@+id/signInActivity"
+        android:name="com.example.happyplacesapp.auth.SignInActivity"
+        android:label="activity_sign_in"
+        tools:layout="@layout/activity_sign_in" />
+    <activity
+        android:id="@+id/signUpActivity"
+        android:name="com.example.happyplacesapp.auth.SignUpActivity"
+        android:label="activity_sign_up"
+        tools:layout="@layout/activity_sign_up" />
 </navigation>

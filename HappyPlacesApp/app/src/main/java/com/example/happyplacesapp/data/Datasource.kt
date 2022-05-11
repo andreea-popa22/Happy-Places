@@ -16,28 +16,46 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.ValueEventListener
 
 import android.util.JsonReader
+import android.util.Log
+import com.google.firebase.database.ktx.getValue
 import org.json.JSONObject
 
 
 class Datasource {
     private var places : MutableList<HappyPlaceItem> = mutableListOf<HappyPlaceItem>()
     private lateinit var database: DatabaseReference
+    private var placesBackup: String = "{ \"places\": {\"1\": {\"name\": \"Happy Place\", \"image\": \"happy_places1.png\", \"location\": \"Herriman, Utah\"}, \"2\": {\"name\": \"Happy Place\", \"image\": \"happy_places2.png\", \"location\": \"Disneyland, Paris\"}, \"3\": {\"name\": \"Happy Place\", \"image\": \"happy_places3.png\", \"location\": \"Wien, Austria\"}, \"4\" : {\"name\": \"Happy Place\", \"image\": \"happy_places4.png\", \"location\": \"Herriman, Utah\"}}}"
 
-    fun loadPlaces(): MutableList<HappyPlaceItem> {
+    public fun loadPlaces(): MutableList<HappyPlaceItem> {
         var value: String = "{}"
         val strUrl = "https://happy-places-57ca4-default-rtdb.europe-west1.firebasedatabase.app/"
-        database = FirebaseDatabase.getInstance(strUrl).getReference("data/places")
-        database.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                value = snapshot.getValue(String::class.java).toString()
+        database = FirebaseDatabase.getInstance(strUrl).getReference("data")
+
+        database.get().addOnSuccessListener {
+            if (it.exists()){
+                value = it.child("places").toString()
+
+            } else {
+                Log.w("Datasource","No places")
             }
-            override fun onCancelled(error: DatabaseError) {
-                    println("error getting places data")
-                }
-            });
-        val placesText = JSONObject(value)
-        for (i in 0 until placesText.length()) {
-            val item : JSONObject = placesText.getString(i.toString()) as JSONObject
+
+        }.addOnFailureListener{
+            Log.w("Datasource","Failed")
+        }
+
+        //        val postListener = object : ValueEventListener {
+        //            override fun onDataChange(snapshot: DataSnapshot) {
+        //                value = snapshot.getValue<String>().toString()
+        //            }
+        //            override fun onCancelled(error: DatabaseError) {
+        //                    Log.w("Load Places", "error getting places data")
+        //                }
+        //            }
+        //        database.addValueEventListener(postListener)
+        // val placesText = JSONObject(value)
+        val placesText = JSONObject(placesBackup)
+        for (i in 1 until placesText.length()) {
+            val item : JSONObject = JSONObject(placesText.getString(i.toString()))
             val name : String = item.getString("name")
             val location : String = item.getString("location")
             val image : String = item.getString("image")

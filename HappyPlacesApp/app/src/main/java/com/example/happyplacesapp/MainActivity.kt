@@ -14,6 +14,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.multidex.MultiDexApplication
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.recyclerview.widget.RecyclerView
+import com.example.happyplacesapp.adapter.ItemAdapter
+import com.example.happyplacesapp.data.Datasource
 import com.example.happyplacesapp.databinding.ActivityMainBinding
 import com.google.firebase.auth.ActionCodeSettings
 import com.google.firebase.auth.EmailAuthProvider
@@ -40,6 +43,11 @@ class MainActivity : AppCompatActivity(){
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
+
+        val myDataset = Datasource().loadPlaces()
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        recyclerView.adapter = ItemAdapter()
+        recyclerView.setHasFixedSize(true)
 
         checkCurrentUser()
     }
