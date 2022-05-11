@@ -25,8 +25,8 @@ class Datasource {
 
     fun loadPlaces(): MutableList<HappyPlaceItem> {
         var value: String = "{}"
-        val strUrl = "https://happy-places-57ca4-default-rtdb.europe-west1.firebasedatabase.app/data/"
-        database = FirebaseDatabase.getInstance(strUrl).getReference("places")
+        val strUrl = "https://happy-places-57ca4-default-rtdb.europe-west1.firebasedatabase.app/"
+        database = FirebaseDatabase.getInstance(strUrl).getReference("data/places")
         database.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 value = snapshot.getValue(String::class.java).toString()
